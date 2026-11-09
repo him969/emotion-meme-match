@@ -1,0 +1,162 @@
+{
+ "n_val": 3589,
+ "geometry_ok": 3315,
+ "geometry_ok_rate": 0.9236556143772638,
+ "per_class_geometry": {
+  "angry": {
+   "mouth_aspect": 0.2458,
+   "eye_open": 0.3276,
+   "corner_lift": -0.0457,
+   "brow_eye": -0.1302
+  },
+  "disgust": {
+   "mouth_aspect": 0.172,
+   "eye_open": 0.2613,
+   "corner_lift": -0.0361,
+   "brow_eye": -0.1203
+  },
+  "fear": {
+   "mouth_aspect": 0.1743,
+   "eye_open": 0.3378,
+   "corner_lift": -0.0302,
+   "brow_eye": -0.1319
+  },
+  "happy": {
+   "mouth_aspect": 0.1967,
+   "eye_open": 0.3134,
+   "corner_lift": 0.002,
+   "brow_eye": -0.1278
+  },
+  "sad": {
+   "mouth_aspect": 0.1025,
+   "eye_open": 0.3033,
+   "corner_lift": -0.0157,
+   "brow_eye": -0.1437
+  },
+  "surprise": {
+   "mouth_aspect": 0.3566,
+   "eye_open": 0.4473,
+   "corner_lift": -0.0752,
+   "brow_eye": -0.1283
+  },
+  "neutral": {
+   "mouth_aspect": 0.0851,
+   "eye_open": 0.3501,
+   "corner_lift": -0.0144,
+   "brow_eye": -0.1315
+  }
+ },
+ "diversity": {
+  "random": {
+   "unique_memes": 58,
+   "total_memes": 58,
+   "max_single_share": 0.030927835051546393,
+   "consecutive_repeats": 68
+  },
+  "attr": {
+   "unique_memes": 49,
+   "total_memes": 58,
+   "max_single_share": 0.20339927556422402,
+   "consecutive_repeats": 270
+  },
+  "geo": {
+   "unique_memes": 47,
+   "total_memes": 58,
+   "max_single_share": 0.11590972415714684,
+   "consecutive_repeats": 200
+  },
+  "clip": {
+   "unique_memes": 34,
+   "total_memes": 58,
+   "max_single_share": 0.1507383672332126,
+   "consecutive_repeats": 327
+  },
+  "fused": {
+   "unique_memes": 47,
+   "total_memes": 58,
+   "max_single_share": 0.11590972415714684,
+   "consecutive_repeats": 200
+  }
+ },
+ "beta_sweep": [
+  {
+   "beta": 0.0,
+   "emotion_hit": 0.6773474505433268,
+   "mean_visual": 0.6851876378059387,
+   "unique_memes": 8,
+   "total_memes": 58,
+   "max_single_share": 0.24547227640011146,
+   "consecutive_repeats": 628
+  },
+  {
+   "beta": 0.1,
+   "emotion_hit": 0.6767901922541097,
+   "mean_visual": 0.7278375625610352,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.17581499024797995,
+   "consecutive_repeats": 228
+  },
+  {
+   "beta": 0.2,
+   "emotion_hit": 0.6765115631095012,
+   "mean_visual": 0.7279167175292969,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.17609361939258847,
+   "consecutive_repeats": 228
+  },
+  {
+   "beta": 0.3,
+   "emotion_hit": 0.6765115631095012,
+   "mean_visual": 0.7279364466667175,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.17609361939258847,
+   "consecutive_repeats": 228
+  },
+  {
+   "beta": 0.35,
+   "emotion_hit": 0.6762329339648927,
+   "mean_visual": 0.7280009388923645,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.176372248537197,
+   "consecutive_repeats": 229
+  },
+  {
+   "beta": 0.4,
+   "emotion_hit": 0.6765115631095012,
+   "mean_visual": 0.7280961275100708,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.176372248537197,
+   "consecutive_repeats": 229
+  },
+  {
+   "beta": 0.5,
+   "emotion_hit": 0.6762329339648927,
+   "mean_visual": 0.7282425761222839,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.176372248537197,
+   "consecutive_repeats": 232
+  },
+  {
+   "beta": 0.6,
+   "emotion_hit": 0.6762329339648927,
+   "mean_visual": 0.7284122109413147,
+   "unique_memes": 48,
+   "total_memes": 58,
+   "max_single_share": 0.176372248537197,
+   "consecutive_repeats": 228
+  }
+ ],
+ "baseline_soft_match_hit": 0.6773474505433268,
+ "weights": {
+  "attr": 0.5,
+  "geo": 0.35,
+  "clip": 0.15
+ },
+ "generated": "2026-10-31 20:29:36"
+}

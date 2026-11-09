@@ -1,0 +1,52 @@
+# 表情识别 + 猫 meme 匹配
+
+用卷积神经网络识别输入人脸的 **7 类表情**（angry / disgust / fear / happy / sad / surprise / neutral），
+得到情绪标签后，从一组**已标注情绪的猫 meme 表情包**里挑出**最匹配**的一张。
+
+```
+输入图片 / 摄像头 → 人脸裁剪 → CNN → 7 类情绪概率 → 检索策略 → 输出一张猫 meme
+```
+
+- 类型：课程大作业（深度学习 / 人工智能方向）
+- 最终模型（EfficientNet-B0@160，v2 3-seed 集成 + TTA）测试集：**Accuracy 75.93% / Macro-F1 0.7443**
+- 演示：Streamlit 单页应用（`代码/07_demo_app.py`），支持"3-seed 集成""神似模式""视觉多样性"等可选开关
+
+## 仓库内容说明
+
+为保持仓库轻量，**只包含代码、文档与实验结果摘要**；下列内容未入库：
+
+| 未入库内容 | 原因 | 获取方式 |
+|---|---|---|
+| `数据/`（FER2013 / FER+、猫 meme 图片库） | 数据集体积大，且有各自许可 | 见 `代码/00_download_fer2013.py`、`代码/02_meme_index.py` 的下载与整理脚本 |
+| `模型/`（训练好的 `.pth` 权重，约 589 MB） | 体积大 | 按 `代码/05_train.py`、`代码/08_transfer_train.py` 自行训练，或向仓库所有者索取 |
+| `_deps/`（timm / CLIP / mediapipe 等手工依赖与预训练权重，约 1.1 GB） | 体积大 | 按 `PROJECT.md` 第 3.3 节说明手工安装，或使用你自己的 Python 环境 |
+| `结果/` 中的大图（>500 KB）、日志、`.npz` / 大 `.csv` 中间数据 | 体积大 / 可再生成 | 运行对应脚本重新生成 |
+
+详细说明见 [PROJECT.md](PROJECT.md) 与 [交接总结.md](交接总结.md)。
+
+## 环境与运行
+
+1. 准备 Python 3.10+（项目在 3.14 上验证），安装 `torch`、`numpy`、`pandas`、`pillow`、`scikit-learn`、`matplotlib`、`streamlit` 等依赖；
+2. 按上表准备 `数据/` 与训练好的 `模型/`；
+3. 启动演示：
+   - **Windows**：双击 `启动演示.bat`（若 Python 不在 PATH，先 `set "PYTHON=<python.exe 完整路径>"` 再运行）；
+   - 或命令行：`python -m streamlit run 代码/07_demo_app.py --server.port 8501`
+4. 打开浏览器访问 `http://localhost:8501`。
+
+## 目录结构
+
+```
+表情识别项目/
+├── 代码/            # 22 个 Python 脚本：数据下载/索引、模型、训练、评估、演示等
+├── 报告/            # 结题报告
+├── 结果/            # 实验结果摘要：评估 JSON/TXT、混淆矩阵、训练曲线等
+├── PROJECT.md       # 完整工程记录：环境、数据审查、方案、实验与排障
+├── 交接总结.md       # 状态交接与经验教训
+├── 启动演示.bat      # Streamlit 演示一键启动（ASCII-only）
+└── .gitignore
+```
+
+## 说明
+
+- 本仓库为个人学习 / 课程项目，当前设为 **Private** 保存；
+- `数据/` 中猫 meme 图片版权归原作者，仅用于学习研究；FER2013 / FER+ 数据集请遵循其原始许可。

@@ -1,0 +1,824 @@
+﻿{
+ "meta": {
+  "weights": "<项目根>/模型/best_model.pth",
+  "device": "cuda",
+  "n_val": 3589,
+  "tta": true,
+  "n_memes": 66,
+  "n_multi_memes": 26,
+  "cv_folds": 5,
+  "note": "val-only；测试集未参与；默认行为未修改；v1 的加权平均在数学上被 one-hot 支配，故引入 cosine/maxlabel/gated"
+ },
+ "n_ambiguous": {
+  "pmax<0.5": 691,
+  "pmax<0.6": 1114
+ },
+ "full_val": {
+  "baseline": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7241571468375592,
+    "coverage": 0.7428252995263305,
+    "multi_rate": 0.2705488994148788
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.38639652677279307,
+    "coverage": 0.4283646888567294,
+    "multi_rate": 0.35021707670043417
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.4730700179533214,
+    "coverage": 0.5089766606822262,
+    "multi_rate": 0.3123877917414722
+   }
+  },
+  "weighted": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7241571468375592,
+    "coverage": 0.7241571468375592,
+    "multi_rate": 0.0
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.38639652677279307,
+    "coverage": 0.38639652677279307,
+    "multi_rate": 0.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.4730700179533214,
+    "coverage": 0.4730700179533214,
+    "multi_rate": 0.0
+   }
+  },
+  "cosine": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.8057954862078573,
+    "multi_rate": 1.0
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "maxlabel": {
+   "all": {
+    "n": 3589,
+    "strict": 0.19810532181666202,
+    "coverage": 0.7762607968793536,
+    "multi_rate": 1.0
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.50": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7205349679576484,
+    "coverage": 0.7667874059626637,
+    "multi_rate": 0.1925327389244915
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.4614003590664273,
+    "coverage": 0.6104129263913824,
+    "multi_rate": 0.6202872531418312
+   }
+  },
+  "gated_cosine_theta=0.55": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7180273056561717,
+    "coverage": 0.7740317637224854,
+    "multi_rate": 0.24407913067706882
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.4533213644524237,
+    "coverage": 0.6337522441651705,
+    "multi_rate": 0.7863554757630161
+   }
+  },
+  "gated_cosine_theta=0.60": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.7782112008916132,
+    "multi_rate": 0.310392867093898
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.65": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.7835051546391752,
+    "multi_rate": 0.5037614934522151
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.70": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.7896349958205628,
+    "multi_rate": 0.6522708275285595
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.75": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.7991083867372527,
+    "multi_rate": 0.8172192811368069
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.80": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.8024519364725551,
+    "multi_rate": 0.9434382836444692
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.85": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.8049595987740318,
+    "multi_rate": 0.9899693507940931
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_cosine_theta=0.90": {
+   "all": {
+    "n": 3589,
+    "strict": 0.7174700473669546,
+    "coverage": 0.8055168570632488,
+    "multi_rate": 0.9916411256617442
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.3675832127351664,
+    "coverage": 0.6078147612156295,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.45152603231597843,
+    "coverage": 0.6472172351885098,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.50": {
+   "all": {
+    "n": 3589,
+    "strict": 0.6857063248815826,
+    "coverage": 0.7472833658400668,
+    "multi_rate": 0.1925327389244915
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.3491921005385996,
+    "coverage": 0.547576301615799,
+    "multi_rate": 0.6202872531418312
+   }
+  },
+  "gated_maxlabel_theta=0.55": {
+   "all": {
+    "n": 3589,
+    "strict": 0.6662022847589858,
+    "coverage": 0.7517414321538033,
+    "multi_rate": 0.24407913067706882
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.2863554757630162,
+    "coverage": 0.5619389587073609,
+    "multi_rate": 0.7863554757630161
+   }
+  },
+  "gated_maxlabel_theta=0.60": {
+   "all": {
+    "n": 3589,
+    "strict": 0.6363889662858735,
+    "coverage": 0.7564781276121483,
+    "multi_rate": 0.310392867093898
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.65": {
+   "all": {
+    "n": 3589,
+    "strict": 0.4864864864864865,
+    "coverage": 0.7620507105043187,
+    "multi_rate": 0.5037614934522151
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.70": {
+   "all": {
+    "n": 3589,
+    "strict": 0.38144329896907214,
+    "coverage": 0.7651156310950126,
+    "multi_rate": 0.6522708275285595
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.75": {
+   "all": {
+    "n": 3589,
+    "strict": 0.29896907216494845,
+    "coverage": 0.7726386179994428,
+    "multi_rate": 0.8172192811368069
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.80": {
+   "all": {
+    "n": 3589,
+    "strict": 0.24240735580941766,
+    "coverage": 0.7751462803009195,
+    "multi_rate": 0.9434382836444692
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.85": {
+   "all": {
+    "n": 3589,
+    "strict": 0.20618556701030927,
+    "coverage": 0.775424909445528,
+    "multi_rate": 0.9899693507940931
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  },
+  "gated_maxlabel_theta=0.90": {
+   "all": {
+    "n": 3589,
+    "strict": 0.20562830872109222,
+    "coverage": 0.775982167734745,
+    "multi_rate": 0.9916411256617442
+   },
+   "amb<0.5": {
+    "n": 691,
+    "strict": 0.18668596237337193,
+    "coverage": 0.5065123010130246,
+    "multi_rate": 1.0
+   },
+   "amb<0.6": {
+    "n": 1114,
+    "strict": 0.19030520646319568,
+    "coverage": 0.5771992818671454,
+    "multi_rate": 1.0
+   }
+  }
+ },
+ "cv": {
+  "gated_cosine": {
+   "theta_per_fold": [
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9
+   ],
+   "strict": 0.717471435841851,
+   "coverage": 0.8055135332533032,
+   "multi_rate": 0.9916407345679732
+  },
+  "gated_maxlabel": {
+   "theta_per_fold": [
+    0.85,
+    0.9,
+    0.9,
+    0.9,
+    0.9
+   ],
+   "strict": 0.20591057602281246,
+   "coverage": 0.775426471330948,
+   "multi_rate": 0.9905265284398395
+  }
+ },
+ "multi_label_memes": {
+  "angry_memegen_grumpy-cat.png": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "disgust",
+     "weight": 0.3
+    }
+   ]
+  },
+  "angry_picker_angry.jpeg": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "disgust",
+     "weight": 0.3
+    }
+   ]
+  },
+  "angry_picker_angry2.gif": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "disgust",
+     "weight": 0.3
+    }
+   ]
+  },
+  "angry_picker_angry3.jpeg": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "sad",
+     "weight": 0.3
+    }
+   ]
+  },
+  "angry_pielet_annoyed-cat.png": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "disgust",
+     "weight": 0.3
+    }
+   ]
+  },
+  "angry_pielet_yelling-cat.webp": {
+   "dominant": "angry",
+   "labels": [
+    {
+     "emotion": "angry",
+     "weight": 0.7
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.3
+    }
+   ]
+  },
+  "disgust_picker_dominant.gif": {
+   "dominant": "disgust",
+   "labels": [
+    {
+     "emotion": "disgust",
+     "weight": 0.7
+    },
+    {
+     "emotion": "angry",
+     "weight": 0.3
+    }
+   ]
+  },
+  "disgust_pielet_side-eye-cat.jpg": {
+   "dominant": "disgust",
+   "labels": [
+    {
+     "emotion": "disgust",
+     "weight": 0.7
+    },
+    {
+     "emotion": "angry",
+     "weight": 0.3
+    }
+   ]
+  },
+  "disgust_pielet_smug-cat.jpg": {
+   "dominant": "disgust",
+   "labels": [
+    {
+     "emotion": "disgust",
+     "weight": 0.6
+    },
+    {
+     "emotion": "happy",
+     "weight": 0.4
+    }
+   ]
+  },
+  "fear_picker_nervous.jpeg": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "sad",
+     "weight": 0.3
+    }
+   ]
+  },
+  "fear_picker_nervous2.gif": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "sad",
+     "weight": 0.3
+    }
+   ]
+  },
+  "fear_pielet_cats-and-cucumbers.jpg": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.3
+    }
+   ]
+  },
+  "fear_pielet_cursed-cat.jpg": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.3
+    }
+   ]
+  },
+  "fear_pielet_jump-cat.jpg": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.3
+    }
+   ]
+  },
+  "fear_pielet_oh-long-johnson.gif": {
+   "dominant": "fear",
+   "labels": [
+    {
+     "emotion": "fear",
+     "weight": 0.7
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.3
+    }
+   ]
+  },
+  "happy_tizee_cat-pop.gif": {
+   "dominant": "happy",
+   "labels": [
+    {
+     "emotion": "happy",
+     "weight": 0.6
+    },
+    {
+     "emotion": "surprise",
+     "weight": 0.4
+    }
+   ]
+  },
+  "happy_pielet_hehe-cat.png": {
+   "dominant": "happy",
+   "labels": [
+    {
+     "emotion": "happy",
+     "weight": 0.7
+    },
+    {
+     "emotion": "disgust",
+     "weight": 0.3
+    }
+   ]
+  },
+  "happy_pielet_cat-eating-chips.gif": {
+   "dominant": "happy",
+   "labels": [
+    {
+     "emotion": "happy",
+     "weight": 0.7
+    },
+    {
+     "emotion": "neutral",
+     "weight": 0.3
+    }
+   ]
+  },
+  "neutral_picker_insomnia2.gif": {
+   "dominant": "neutral",
+   "labels": [
+    {
+     "emotion": "neutral",
+     "weight": 0.7
+    },
+    {
+     "emotion": "sad",
+     "weight": 0.3
+    }
+   ]
+  },
+  "neutral_picker_lazy.gif": {
+   "dominant": "neutral",
+   "labels": [
+    {
+     "emotion": "neutral",
+     "weight": 0.7
+    },
+    {
+     "emotion": "sad",
+     "weight": 0.3
+    }
+   ]
+  },
+  "neutral_pielet_polite-cat.webp": {
+   "dominant": "neutral",
+   "labels": [
+    {
+     "emotion": "neutral",
+     "weight": 0.7
+    },
+    {
+     "emotion": "happy",
+     "weight": 0.3
+    }
+   ]
+  },
+  "sad_pielet_smudge-cat.jpg": {
+   "dominant": "sad",
+   "labels": [
+    {
+     "emotion": "sad",
+     "weight": 0.6
+    },
+    {
+     "emotion": "neutral",
+     "weight": 0.4
+    }
+   ]
+  },
+  "surprise_pielet_huh-cat.gif": {
+   "dominant": "surprise",
+   "labels": [
+    {
+     "emotion": "surprise",
+     "weight": 0.6
+    },
+    {
+     "emotion": "neutral",
+     "weight": 0.4
+    }
+   ]
+  },
+  "surprise_picker_confused2.gif": {
+   "dominant": "surprise",
+   "labels": [
+    {
+     "emotion": "surprise",
+     "weight": 0.6
+    },
+    {
+     "emotion": "neutral",
+     "weight": 0.4
+    }
+   ]
+  },
+  "surprise_pielet_ohrenaugenkatze.jpg": {
+   "dominant": "surprise",
+   "labels": [
+    {
+     "emotion": "surprise",
+     "weight": 0.7
+    },
+    {
+     "emotion": "fear",
+     "weight": 0.3
+    }
+   ]
+  },
+  "surprise_pielet_lil-bub.jpg": {
+   "dominant": "surprise",
+   "labels": [
+    {
+     "emotion": "surprise",
+     "weight": 0.6
+    },
+    {
+     "emotion": "happy",
+     "weight": 0.4
+    }
+   ]
+  }
+ }
+}

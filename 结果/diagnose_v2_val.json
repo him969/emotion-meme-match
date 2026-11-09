@@ -1,0 +1,307 @@
+﻿{
+ "meta": {
+  "weights": "<项目根>/模型/best_model.pth",
+  "device": "cuda",
+  "tta": false,
+  "n_val": 3589,
+  "model_epoch": 23,
+  "ckpt_val_acc": 0.7263861799944274,
+  "ckpt_val_macro_f1": 0.7039237800041896
+ },
+ "overall": {
+  "acc": 0.7261,
+  "macro_f1": 0.7036
+ },
+ "per_class": {
+  "angry": {
+   "precision": 0.6388,
+   "recall": 0.6552,
+   "f1": 0.6469,
+   "support": 467
+  },
+  "disgust": {
+   "precision": 0.68,
+   "recall": 0.6071,
+   "f1": 0.6415,
+   "support": 56
+  },
+  "fear": {
+   "precision": 0.6535,
+   "recall": 0.5323,
+   "f1": 0.5867,
+   "support": 496
+  },
+  "happy": {
+   "precision": 0.8857,
+   "recall": 0.8827,
+   "f1": 0.8842,
+   "support": 895
+  },
+  "sad": {
+   "precision": 0.6495,
+   "recall": 0.6187,
+   "f1": 0.6337,
+   "support": 653
+  },
+  "surprise": {
+   "precision": 0.8411,
+   "recall": 0.8675,
+   "f1": 0.8541,
+   "support": 415
+  },
+  "neutral": {
+   "precision": 0.6275,
+   "recall": 0.7381,
+   "f1": 0.6783,
+   "support": 607
+  }
+ },
+ "confusion": {
+  "matrix": [
+   [
+    306,
+    5,
+    39,
+    15,
+    45,
+    6,
+    51
+   ],
+   [
+    12,
+    34,
+    3,
+    2,
+    4,
+    0,
+    1
+   ],
+   [
+    51,
+    4,
+    264,
+    9,
+    89,
+    29,
+    50
+   ],
+   [
+    9,
+    0,
+    7,
+    790,
+    12,
+    18,
+    59
+   ],
+   [
+    63,
+    4,
+    49,
+    24,
+    404,
+    9,
+    100
+   ],
+   [
+    11,
+    0,
+    19,
+    13,
+    7,
+    360,
+    5
+   ],
+   [
+    27,
+    3,
+    23,
+    39,
+    61,
+    6,
+    448
+   ]
+  ],
+  "row_normalized": [
+   [
+    0.6552,
+    0.0107,
+    0.0835,
+    0.0321,
+    0.0964,
+    0.0128,
+    0.1092
+   ],
+   [
+    0.2143,
+    0.6071,
+    0.0536,
+    0.0357,
+    0.0714,
+    0.0,
+    0.0179
+   ],
+   [
+    0.1028,
+    0.0081,
+    0.5323,
+    0.0181,
+    0.1794,
+    0.0585,
+    0.1008
+   ],
+   [
+    0.0101,
+    0.0,
+    0.0078,
+    0.8827,
+    0.0134,
+    0.0201,
+    0.0659
+   ],
+   [
+    0.0965,
+    0.0061,
+    0.075,
+    0.0368,
+    0.6187,
+    0.0138,
+    0.1531
+   ],
+   [
+    0.0265,
+    0.0,
+    0.0458,
+    0.0313,
+    0.0169,
+    0.8675,
+    0.012
+   ],
+   [
+    0.0445,
+    0.0049,
+    0.0379,
+    0.0643,
+    0.1005,
+    0.0099,
+    0.7381
+   ]
+  ],
+  "labels": [
+   "angry",
+   "disgust",
+   "fear",
+   "happy",
+   "sad",
+   "surprise",
+   "neutral"
+  ]
+ },
+ "top_confusions": [
+  {
+   "true": "sad",
+   "pred": "neutral",
+   "count": 100,
+   "rate": 0.1531
+  },
+  {
+   "true": "fear",
+   "pred": "sad",
+   "count": 89,
+   "rate": 0.1794
+  },
+  {
+   "true": "sad",
+   "pred": "angry",
+   "count": 63,
+   "rate": 0.0965
+  },
+  {
+   "true": "neutral",
+   "pred": "sad",
+   "count": 61,
+   "rate": 0.1005
+  },
+  {
+   "true": "happy",
+   "pred": "neutral",
+   "count": 59,
+   "rate": 0.0659
+  },
+  {
+   "true": "angry",
+   "pred": "neutral",
+   "count": 51,
+   "rate": 0.1092
+  },
+  {
+   "true": "fear",
+   "pred": "angry",
+   "count": 51,
+   "rate": 0.1028
+  },
+  {
+   "true": "fear",
+   "pred": "neutral",
+   "count": 50,
+   "rate": 0.1008
+  }
+ ],
+ "confidence": {
+  "mean_conf_correct": 0.6675,
+  "mean_conf_wrong": 0.5642,
+  "bins": [
+   {
+    "range": "0.2-0.4",
+    "n": 300,
+    "acc": 0.35,
+    "avg_conf": 0.3421
+   },
+   {
+    "range": "0.4-0.6",
+    "n": 691,
+    "acc": 0.5166,
+    "avg_conf": 0.5102
+   },
+   {
+    "range": "0.6-0.8",
+    "n": 2366,
+    "acc": 0.8178,
+    "avg_conf": 0.6952
+   },
+   {
+    "range": "0.8-1.0",
+    "n": 232,
+    "acc": 0.9009,
+    "avg_conf": 0.8366
+   }
+  ],
+  "ece": 0.094,
+  "temperature": {
+   "T_star": 0.9,
+   "nll_before": 1.0449,
+   "nll_after": 1.0409,
+   "ece_after": 0.0534
+  },
+  "margin": {
+   "correct_mean": 0.5094,
+   "wrong_mean": 0.3816,
+   "wrong_frac_margin_lt_0.10": 0.1312,
+   "wrong_frac_margin_lt_0.20": 0.2472
+  }
+ },
+ "label_noise_proxy": {
+  "ferplus_coverage": 0.9972,
+  "orig_ferplus_agree": 0.6359,
+  "n_errors_all": 983,
+  "n_errors_valid": 976,
+  "errors_matching_ferplus": 368,
+  "errors_matching_ferplus_rate": 0.377,
+  "n_clear": 2276,
+  "acc_on_clear": 0.8721,
+  "n_errors_on_clear": 291,
+  "n_ambiguous": 1303,
+  "acc_on_ambiguous_vs_orig": 0.4743,
+  "acc_on_ambiguous_vs_ferplus": 0.2824
+ }
+}

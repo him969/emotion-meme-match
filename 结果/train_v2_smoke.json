@@ -1,0 +1,84 @@
+{
+  "args": {
+    "model": "resnet18",
+    "img_size": 128,
+    "epochs": 3,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "no_weight": false,
+    "patience": 10,
+    "name": "v2_smoke",
+    "seed": 42,
+    "num_workers": 0,
+    "amp": true,
+    "optimizer": "adamw",
+    "warmup_epochs": 1,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "swa_last": 2,
+    "mixup": 0.2,
+    "balance": "none",
+    "aug": "strong",
+    "note": "3轮smoke验证流程"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0003,
+      "train_loss": 1.7378459860154165,
+      "train_acc": 0.3030060259848828,
+      "val_loss": 1.539328442107472,
+      "val_acc": 0.5436054611312343,
+      "val_macro_f1": 0.43393494242888536,
+      "time_s": 101.31150531768799,
+      "val_loss_ema": 1.916157416029872,
+      "val_acc_ema": 0.25522429646140987,
+      "val_macro_f1_ema": 0.16942891929407816
+    },
+    {
+      "epoch": 2,
+      "lr": 0.0003,
+      "train_loss": 1.5939949370546689,
+      "train_acc": 0.37361106273294087,
+      "val_loss": 1.4849750952124097,
+      "val_acc": 0.5723042630259125,
+      "val_macro_f1": 0.46923173589304584,
+      "time_s": 46.52256536483765,
+      "val_loss_ema": 1.7815862148045232,
+      "val_acc_ema": 0.4285316244079131,
+      "val_macro_f1_ema": 0.3402956009422647
+    },
+    {
+      "epoch": 3,
+      "lr": 0.00015,
+      "train_loss": 1.5392969372736804,
+      "train_acc": 0.38503605141244907,
+      "val_loss": 1.4379380576023986,
+      "val_acc": 0.5993312900529395,
+      "val_macro_f1": 0.5199073584344281,
+      "time_s": 45.4588565826416,
+      "val_loss_ema": 1.6182737507239529,
+      "val_acc_ema": 0.5227082752855948,
+      "val_macro_f1_ema": 0.42609296044860046
+    }
+  ],
+  "best": {
+    "epoch": 3,
+    "val_acc": 0.5993312900529395,
+    "macro_f1": 0.5199073584344281,
+    "val_loss": 1.4379380576023986,
+    "source": "raw"
+  },
+  "max_acc": {
+    "val_acc": 0.5993312900529395,
+    "macro_f1": 0.5199073584344281,
+    "epoch": 3
+  },
+  "swa": {
+    "swa_val_acc": 0.5895792699916411,
+    "swa_val_macro_f1": 0.4936218264300502,
+    "swa_adopted": false
+  }
+}

@@ -1,0 +1,39 @@
+FER2013 表情分类模型集成评估报告
+============================================================
+模型：v2_seed42.pth、v2_seed43.pth、v2_seed44.pth、v2_effv2b0_s42.pth、v2_droppath_s42.pth
+TTA：6 视角
+评估 split：['val']
+
+集成指标:
+  val  : n=3589  Accuracy=0.7409  Macro-F1=0.7200
+
+单模型指标:
+  v2_seed42.pth                val  : acc=0.7300  macro-F1=0.7046
+  v2_seed43.pth                val  : acc=0.7275  macro-F1=0.7078
+  v2_seed44.pth                val  : acc=0.7200  macro-F1=0.7031
+  v2_effv2b0_s42.pth           val  : acc=0.7261  macro-F1=0.7073
+  v2_droppath_s42.pth          val  : acc=0.7172  macro-F1=0.6948
+
+val 每类指标:
+              precision    recall  f1-score   support
+
+       angry     0.6723    0.6767    0.6745       467
+     disgust     0.6607    0.6607    0.6607        56
+        fear     0.6929    0.5504    0.6135       496
+       happy     0.8969    0.8849    0.8909       895
+         sad     0.6557    0.6417    0.6486       653
+    surprise     0.8406    0.8771    0.8585       415
+     neutral     0.6415    0.7545    0.6934       607
+
+    accuracy                         0.7409      3589
+   macro avg     0.7230    0.7209    0.7200      3589
+weighted avg     0.7422    0.7409    0.7396      3589
+
+val 混淆矩阵（行=真实，列=预测）:
+[[316   9  34  18  46   5  39]
+ [ 13  37   1   1   4   0   0]
+ [ 42   4 273   7  87  31  52]
+ [ 10   1   6 792   8  20  58]
+ [ 62   2  46  15 419   7 102]
+ [  8   1  16  12   9 364   5]
+ [ 19   2  18  38  66   6 458]]

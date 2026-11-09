@@ -1,0 +1,171 @@
+﻿{
+  "weights": "<项目根>/模型/v2_focal_s42.pth",
+  "profile": "timm:efficientnet_b0",
+  "checkpoint_epoch": 14,
+  "tta": false,
+  "tta_strong": false,
+  "splits": [
+    "val"
+  ],
+  "detail_split": "val",
+  "metrics": {
+    "no_tta": {
+      "val": {
+        "acc": 0.7269434382836445,
+        "macro_f1": 0.6991632632736351,
+        "n": 3589
+      }
+    },
+    "tta": {}
+  },
+  "class_names": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "neutral"
+  ],
+  "val_confusion_counts": [
+    [
+      308,
+      11,
+      34,
+      17,
+      45,
+      5,
+      47
+    ],
+    [
+      14,
+      33,
+      1,
+      1,
+      5,
+      0,
+      2
+    ],
+    [
+      39,
+      6,
+      268,
+      6,
+      87,
+      29,
+      61
+    ],
+    [
+      12,
+      2,
+      7,
+      800,
+      5,
+      13,
+      56
+    ],
+    [
+      65,
+      0,
+      59,
+      20,
+      392,
+      7,
+      110
+    ],
+    [
+      11,
+      0,
+      26,
+      14,
+      6,
+      352,
+      6
+    ],
+    [
+      20,
+      2,
+      19,
+      42,
+      65,
+      3,
+      456
+    ]
+  ],
+  "top_confusions": [
+    {
+      "true": "sad",
+      "pred": "neutral",
+      "count": 110,
+      "rate_of_true": 0.16845329249617153
+    },
+    {
+      "true": "fear",
+      "pred": "sad",
+      "count": 87,
+      "rate_of_true": 0.17540322580645162
+    },
+    {
+      "true": "sad",
+      "pred": "angry",
+      "count": 65,
+      "rate_of_true": 0.0995405819295559
+    },
+    {
+      "true": "neutral",
+      "pred": "sad",
+      "count": 65,
+      "rate_of_true": 0.1070840197693575
+    },
+    {
+      "true": "fear",
+      "pred": "neutral",
+      "count": 61,
+      "rate_of_true": 0.12298387096774194
+    }
+  ],
+  "val_per_class": {
+    "angry": {
+      "precision": 0.6567164179104478,
+      "recall": 0.6595289079229122,
+      "f1-score": 0.6581196581196581,
+      "support": 467.0
+    },
+    "disgust": {
+      "precision": 0.6111111111111112,
+      "recall": 0.5892857142857143,
+      "f1-score": 0.6,
+      "support": 56.0
+    },
+    "fear": {
+      "precision": 0.6473429951690821,
+      "recall": 0.5403225806451613,
+      "f1-score": 0.589010989010989,
+      "support": 496.0
+    },
+    "happy": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8938547486033519,
+      "f1-score": 0.8913649025069638,
+      "support": 895.0
+    },
+    "sad": {
+      "precision": 0.6479338842975206,
+      "recall": 0.6003062787136294,
+      "f1-score": 0.6232114467408585,
+      "support": 653.0
+    },
+    "surprise": {
+      "precision": 0.8606356968215159,
+      "recall": 0.8481927710843373,
+      "f1-score": 0.8543689320388349,
+      "support": 415.0
+    },
+    "neutral": {
+      "precision": 0.6178861788617886,
+      "recall": 0.7512355848434926,
+      "f1-score": 0.6780669144981413,
+      "support": 607.0
+    }
+  }
+}
