@@ -45,6 +45,12 @@
    - 或命令行：`python -m streamlit run 代码/07_demo_app.py --server.port 8501`
 4. 打开浏览器访问 `http://localhost:8501`。
 
+## 用 AI 助手快速部署（可选）
+
+如果你不熟悉 Python 环境配置，可以把 [`DEPLOY_WITH_AI.md`](DEPLOY_WITH_AI.md) 里的提示词（连同本仓库链接）发给任意支持终端执行的 AI 编程助手（Cursor、Claude Code、Codex、DSH 等），由它按步骤完成环境安装、数据 / 权重准备与演示启动。
+
+> 提示：模型权重在 Release 附件 `model-weights-v1.0.0.zip`；`数据/` 未随仓库提供，需按上文或联系仓库作者获取。
+
 ## 目录结构
 
 ```
