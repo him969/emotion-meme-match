@@ -25,9 +25,10 @@
 1) 模型权重：GitHub Release（v1.0.0）附件 `model-weights-v1.0.0.zip`（约 546 MB），解压后把 .pth 放到仓库根目录的 `模型/` 下。
    必需文件至少包括：`模型/best_model.pth`、`模型/v2_seed42.pth`、`模型/v2_seed43.pth`、`模型/v2_seed44.pth`
 2) 数据目录 `数据/`：
-   - FER2013：可运行 `代码/00_download_fer2013.py` 自动从 hf-mirror 下载并生成 `数据/fer2013/fer2013.npz`
-   - 猫 meme 库：`数据/meme_ready/<7 个情绪>/ 的 256x256 PNG` + `数据/meme_index.csv`（演示程序靠它检索）。
-     这两项仓库未包含，需从作者提供的资产包获取（询问用户存放在哪里），或让用户向仓库作者索取。
+   - 首选：GitHub Release（v1.0.0）附件 `data-assets-v1.0.0.zip`（约 118 MB），解压到项目根目录即得到 `数据/`
+     （含 FER2013、meme_ready、meme_index.csv、GIF 资产、神似模式标签等演示所需最小数据）
+   - 若没有该附件：FER2013 可运行 `代码/00_download_fer2013.py` 自动下载重建；
+     猫 meme 库（`数据/meme_ready/` + `数据/meme_index.csv`）需向仓库作者索取（仓库未包含原始 meme 库）
 3) （可选）`_deps/`：CLIP / mediapipe / 关键点模型等，约 1.1 GB，只影响「神似模式」；缺失时页面会自动隐藏该开关，不影响基础演示。若用户提供了就解压到仓库根目录。
 
 ========== 前置检查（先做，不要急着安装） ==========
@@ -49,9 +50,10 @@ C. 安装依赖
    2) pip install numpy pandas pillow scikit-learn matplotlib streamlit tqdm timm pyarrow
 D. 准备资产
    1) 模型权重：下载 Release 附件 `model-weights-v1.0.0.zip` → 解压到 `模型/`；确认上述 4 个 .pth 存在
-   2) FER2013：python 代码/00_download_fer2013.py（Windows 先 $env:PYTHONIOENCODING='utf-8'）
-   3) 猫 meme 库：按用户提供的资产包/下载地址，解压到 `数据/`，确认 `数据/meme_ready/` 有 7 个情绪子目录、`数据/meme_index.csv` 存在
-   4) （可选）_deps/：用户提供则解压到项目根目录，否则跳过
+   2) 数据资产：下载 Release 附件 `data-assets-v1.0.0.zip`（约 118 MB）→ 解压到项目根目录（得到 `数据/`），
+      确认 `数据/meme_ready/` 有 7 个情绪子目录、`数据/meme_index.csv` 存在
+      - 若无该附件：FER2013 用 python 代码/00_download_fer2013.py 重建；猫 meme 库需向作者索取
+   3) （可选）_deps/：用户提供则解压到项目根目录，否则跳过
 E. 冒烟测试（必须全部通过才继续）
    python 代码/01_env_check.py
    python 代码/07_demo_app.py --selftest

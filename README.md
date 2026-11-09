@@ -29,7 +29,7 @@
 
 | 未入库内容 | 原因 | 获取方式 |
 |---|---|---|
-| `数据/`（FER2013 / FER+、猫 meme 图片库） | 数据集体积大，且有各自许可 | 见 `代码/00_download_fer2013.py`、`代码/02_meme_index.py` 的下载与整理脚本 |
+| `数据/`（FER2013 / FER+、猫 meme 图片库） | 数据集体积大，且有各自许可 | Release 附件 `data-assets-v1.0.0.zip`（演示最小数据，解压到项目根即可）；原始 meme 库 / FER2013 原始文件可用 `代码/00_download_fer2013.py`、`代码/02_meme_index.py` 自行准备 |
 | `模型/`（训练好的 `.pth` 权重，约 589 MB） | 体积大 | 按 `代码/05_train.py`、`代码/08_transfer_train.py` 自行训练，或向仓库所有者索取 |
 | `_deps/`（timm / CLIP / mediapipe 等手工依赖与预训练权重，约 1.1 GB） | 体积大 | 按 `PROJECT.md` 第 3.3 节说明手工安装，或使用你自己的 Python 环境 |
 | `结果/` 中的大图（>500 KB）、日志、`.npz` / 大 `.csv` 中间数据 | 体积大 / 可再生成 | 运行对应脚本重新生成 |
@@ -49,7 +49,7 @@
 
 如果你不熟悉 Python 环境配置，可以把 [`DEPLOY_WITH_AI.md`](DEPLOY_WITH_AI.md) 里的提示词（连同本仓库链接）发给任意支持终端执行的 AI 编程助手（Cursor、Claude Code、Codex、DSH 等），由它按步骤完成环境安装、数据 / 权重准备与演示启动。
 
-> 提示：模型权重在 Release 附件 `model-weights-v1.0.0.zip`；`数据/` 未随仓库提供，需按上文或联系仓库作者获取。
+> 提示：模型权重（`model-weights-v1.0.0.zip`）与演示数据资产（`data-assets-v1.0.0.zip`）都在 Release 附件中。
 
 ## 目录结构
 
